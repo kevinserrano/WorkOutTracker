@@ -37,9 +37,9 @@ module.exports = function(app) {
             res.json(dbWorkout);
         }).catch(err=> {
             res.json(err);
-        })
-    })
-})
+        });
+    });
+});
 
     app.get("/api/workouts/range", (req,res) => {
         db.Workout.find({})
