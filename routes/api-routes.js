@@ -37,7 +37,7 @@ module.exports = function(app) {
             res.json(dbWorkout);
         }).catch(err=> {
             res.json(err);
-        });
+        })
     });
 });
 
