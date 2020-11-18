@@ -1,5 +1,6 @@
 var db = require("../models");
-
+const {Workout} = require("../models");
+let mongoose = require("mongoose");
 
 module.exports = function(app) {
 

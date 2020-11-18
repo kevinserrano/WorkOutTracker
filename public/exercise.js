@@ -28,6 +28,7 @@ async function initExercise() {
     location.search = "?id=" + workout._id;
   }
 
+}
 
 initExercise();
 
@@ -113,7 +114,9 @@ async function handleFormSubmit(event) {
     workoutData.duration = Number(resistanceDurationInput.value.trim());
   }
 
-  await API.addExercise(workoutData);
+  await API.addExercise(workoutData).catch(err=> {
+    res.json(err);
+});
   clearInputs();
   toast.classList.add("success");
 }
@@ -152,4 +155,4 @@ toast.addEventListener("animationend", handleToastAnimationEnd);
 
 document
   .querySelectorAll("input")
-  .forEach(element => element.addEventListener("input", validateInputs))};
+  .forEach(element => element.addEventListener("input", validateInputs));
